@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+
+#searchBar a {
+	color:#411F00;
+}
+
+html,body {
+	background:#F4EBDF;
+}
+
+#searchBar {
+	background:#FFE5CC;
+	color:#411F00;
+	font-size: 14px;
+	width: 100%;
+	height: 100px;
+	display:block;
+}
+
+#searchBar div {
+	display:inline-block;
+	vertical-align:middle;
+}
+
+#searchBar div span, #searchBar div img {
+	vertical-align:middle;
+	display:inline-block;
+}
+#searchBar div {
+	margin:0px 20px 0px 0px;
+	cursor:pointer;
+}
+#searchBar div input {
+	width:400px;
+	padding:5px;
+	font-size:14px;
+	border-radius:8px;
+	border:none;
+}
+
+
+#footer {
+	
+	padding-top: 70%;
+	
+	height: 10px;
+	width:100%;
+
+}
