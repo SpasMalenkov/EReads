@@ -1,2 +1,0 @@
-# GoodReadsFinalProject
-Final Project

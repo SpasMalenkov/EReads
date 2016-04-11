@@ -36,9 +36,13 @@ import="java.text.DecimalFormat" import="java.util.ArrayList" import="bg.ereads.
 	
 	Book book = (Book)request.getSession().getAttribute("book");
 	
+	if (book == null) {
+		System.out.println("hi");
+	}
 	
 	ArrayList<Review> reviews = null;
 	if (request.getSession().getAttribute("reviews") == null) {
+		System.out.println("prazno e");
 	 reviews = new ArrayList<Review>();
 	} else {
 		reviews = (ArrayList<Review>) request.getSession().getAttribute("reviews");
@@ -56,7 +60,7 @@ import="java.text.DecimalFormat" import="java.util.ArrayList" import="bg.ereads.
 		<img src= "Logo.jpg" width="120px" height = "60px"> 
 	</div>
 	<div>
-		<h1>eReads</h1>
+		<h1>GoodBook</h1>
 	</div>
 	<div>
         <form action="./Search" method="get">
