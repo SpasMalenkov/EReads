@@ -46,6 +46,7 @@ public class AddBook extends HttpServlet {
 		User user = (User) request.getSession().getAttribute("user");
 		String email = user.geteMail();
 		String title = request.getParameter("title");
+		
 		String author = request.getParameter("author");
 		String description = request.getParameter("description");
 		String genre = request.getParameter("genre");
@@ -54,7 +55,9 @@ public class AddBook extends HttpServlet {
 		Part part = request.getPart("image");
 		String fileName = null;
             String name = part.getName();
+           
             String contentType = part.getContentType();
+           
             if(!contentType.contains("image") ) {
                 out.println("Only png format supported!");
             } else {
@@ -83,6 +86,7 @@ public class AddBook extends HttpServlet {
     			fileName = "default.jpg";
     		}
 		Book book = new Book(title, author,fileName, description, genre, linkToBuy);
+		
 		
 		try {
 			if (dao.checkBook(title, author) == true) {

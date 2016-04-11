@@ -21,7 +21,9 @@ public class GetBook extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String title =(String) request.getParameter("title");
+		
 		String author =(String) request.getParameter("author");
+		
 		String genre = request.getParameter("genre");
 		String description = request.getParameter("description");
 		String rating = request.getParameter("rating");
@@ -34,6 +36,7 @@ public class GetBook extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		request.getSession().setAttribute("book", b);
 		
 		response.sendRedirect("./ShowComments");

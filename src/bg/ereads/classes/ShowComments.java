@@ -31,6 +31,7 @@ public class ShowComments extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		
 		response.sendRedirect("BookInfo.jsp");
 	} 
 
