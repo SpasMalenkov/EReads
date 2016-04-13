@@ -17,13 +17,14 @@ import bg.ereads.dao.BookDao;
 @WebServlet("/GetBook")
 public class GetBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String title =(String) request.getParameter("title");
-		
-		String author =(String) request.getParameter("author");
-		
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String title = (String) request.getParameter("title");
+
+		String author = (String) request.getParameter("author");
+
 		String genre = request.getParameter("genre");
 		String description = request.getParameter("description");
 		String rating = request.getParameter("rating");
@@ -36,11 +37,11 @@ public class GetBook extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		request.getSession().setAttribute("book", b);
-		
+
 		response.sendRedirect("./ShowComments");
-		//getServletConfig().getServletContext().getRequestDispatcher("/BookInfo.jsp").forward(request,response);
+		// getServletConfig().getServletContext().getRequestDispatcher("/BookInfo.jsp").forward(request,response);
 	}
 
 }

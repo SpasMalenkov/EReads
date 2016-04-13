@@ -17,30 +17,30 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/DisplayPictureBook")
 public class DisplayPictureBook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String picture =(String) request.getParameter("picture");
-		
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		String picture = (String) request.getParameter("picture");
+
 		response.setContentType("image/jpeg");
-		ServletOutputStream out;  
-		out = response.getOutputStream();  
-		   
+		ServletOutputStream out;
+		out = response.getOutputStream();
+
 		FileInputStream fin = new FileInputStream("E:\\ProjectFiles\\book_images\\" + picture);
-		
-		      
-		BufferedInputStream bin = new BufferedInputStream(fin);  
-		BufferedOutputStream bout = new BufferedOutputStream(out);  
-		int ch =0; ;  
-		while((ch=bin.read())!=-1)  {  
-			bout.write(ch);  
-		}  
-		      
-		bin.close();  
-		fin.close();  
-		bout.close();  
+
+		BufferedInputStream bin = new BufferedInputStream(fin);
+		BufferedOutputStream bout = new BufferedOutputStream(out);
+		int ch = 0;
+		;
+		while ((ch = bin.read()) != -1) {
+			bout.write(ch);
+		}
+
+		bin.close();
+		fin.close();
+		bout.close();
 		out.close();
 	}
 
 }
-	
